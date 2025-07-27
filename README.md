@@ -18,67 +18,68 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
 
 * Install dependencies. We use python 3.7 and pytorch == 1.10.0 : http://pytorch.org.
 
+    ```
     conda create -n LCSD python=3.7
     conda activate LCSD
     conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.4 -c pytorch -c nvidia
     cd ${MovingDroneCrowd}
     pip install -r requirements.txt
-    
+    ```
 * Datasets
 
 &nbsp;&nbsp;&nbsp;&nbsp;First build the resources folder used by the code. The folder organization is illustrated below:
 
     
-    $resources/
-    ├── CityUHK-X
-    │   ├── scene_001
-    │   │   ├── CityUHK-X_scene_001_20_40
-    │   │   │   ├── train_data
-    │   │   │   │   ├── images
-    │   │   │   │   │   └── xx.jpg
-    │   │   │   │   ├── ground_truth_txt
-    │   │   │   │   │   └── xx.txt
-    │   │   │   ├── test_data
-    │   │   │   ├── train_data.txt
-    │   │   │   └── test_data.txt
-    │   │   └── scene.jpg
-    │   ├── scene_002
-    │   ├── ...
-    │   └── scene_k
-    ├── Mall
-    │   ├── scene_001
-    │   │   ├── mall_800_1200
-    │   │   │   ├── train_data
-    │   │   │   │   ├── images
-    │   │   │   │   │   └── xx.jpg
-    │   │   │   │   ├── ground_truth_txt
-    │   │   │   │   │   └── xx.txt
-    │   │   │   ├── test_data
-    │   │   │   ├── train_data.txt
-    │   │   │   └── test_data.txt
-    │   │   └── scene.jpg
-    ├── UCSD
-    │   ├── scene_001
-    │   │   ├── ucsd_800_1200
-    │   │   │   ├── train_data
-    │   │   │   │   ├── images
-    │   │   │   │   │   └── xx.jpg
-    │   │   │   │   ├── ground_truth_txt
-    │   │   │   │   │   └── xx.txt
-    │   │   │   ├── test_data
-    │   │   │   ├── train_data.txt
-    │   │   │   └── test_data.txt
-    │   │   └── scene.jpg
-    ├── pedestrians
-    │   ├── GCC
-    │   │   └── xx.png
-    │   ├── SHHB
-    │   └── LSTN
-    ├── indoor_negetive_samples
-    │   └── xx.jpg
-    ├── outdoor_negetive_samples
-    │   └── xx.jpg
-    └── net_G_last.pth.txt
+        $resources/
+        ├── CityUHK-X
+        │   ├── scene_001
+        │   │   ├── CityUHK-X_scene_001_20_40
+        │   │   │   ├── train_data
+        │   │   │   │   ├── images
+        │   │   │   │   │   └── xx.jpg
+        │   │   │   │   ├── ground_truth_txt
+        │   │   │   │   │   └── xx.txt
+        │   │   │   ├── test_data
+        │   │   │   ├── train_data.txt
+        │   │   │   └── test_data.txt
+        │   │   └── scene.jpg
+        │   ├── scene_002
+        │   ├── ...
+        │   └── scene_k
+        ├── Mall
+        │   ├── scene_001
+        │   │   ├── mall_800_1200
+        │   │   │   ├── train_data
+        │   │   │   │   ├── images
+        │   │   │   │   │   └── xx.jpg
+        │   │   │   │   ├── ground_truth_txt
+        │   │   │   │   │   └── xx.txt
+        │   │   │   ├── test_data
+        │   │   │   ├── train_data.txt
+        │   │   │   └── test_data.txt
+        │   │   └── scene.jpg
+        ├── UCSD
+        │   ├── scene_001
+        │   │   ├── ucsd_800_1200
+        │   │   │   ├── train_data
+        │   │   │   │   ├── images
+        │   │   │   │   │   └── xx.jpg
+        │   │   │   │   ├── ground_truth_txt
+        │   │   │   │   │   └── xx.txt
+        │   │   │   ├── test_data
+        │   │   │   ├── train_data.txt
+        │   │   │   └── test_data.txt
+        │   │   └── scene.jpg
+        ├── pedestrians
+        │   ├── GCC
+        │   │   └── xx.png
+        │   ├── SHHB
+        │   └── LSTN
+        ├── indoor_negetive_samples
+        │   └── xx.jpg
+        ├── outdoor_negetive_samples
+        │   └── xx.jpg
+        └── net_G_last.pth.txt
     
 
 download related datasets:
