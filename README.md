@@ -1,4 +1,4 @@
-# Video Individual Counting for Moving Drones (ICCV 2025 Highlight)
+# Learning Crowd Scale and Distribution for Weakly Supervised Crowd Counting and Localization (TCSVT)
 ## Introduction
 This is the official PyTorch implementation of paper: [Learning Crowd Scale and Distribution for Weakly Supervised Crowd Counting and Localization](https://ieeexplore.ieee.org/abstract/document/10680129) (extended from paper [Weakly-supervised scene-specific crowd counting using real-synthetic hybrid data](https://ieeexplore.ieee.org/abstract/document/10095275)). This paper proposes a weakly supervised crowd counting and localization method  based on scene-specific synthetic data for surveillance scenarios, which can accurately predict the number and location of person without any manually labeled point-wise or countwise annotations.
 
