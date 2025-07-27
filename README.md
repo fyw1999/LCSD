@@ -29,58 +29,58 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
 
 &nbsp;&nbsp;&nbsp;&nbsp;First build the resources folder used by the code. The folder organization is illustrated below:
 
-```
-$resources/
-├── CityUHK-X
-│   ├── scene_001
-│   │   ├── CityUHK-X_scene_001_20_40
-│   │   │   ├── train_data
-│   │   │   │   ├── images
-│   │   │   │   │   └── xx.jpg
-│   │   │   │   ├── ground_truth_txt
-│   │   │   │   │   └── xx.txt
-│   │   │   ├── test_data
-│   │   │   ├── train_data.txt
-│   │   │   └── test_data.txt
-│   │   └── scene.jpg
-│   ├── scene_002
-│   ├── ...
-│   └── scene_k
-├── Mall
-│   ├── scene_001
-│   │   ├── mall_800_1200
-│   │   │   ├── train_data
-│   │   │   │   ├── images
-│   │   │   │   │   └── xx.jpg
-│   │   │   │   ├── ground_truth_txt
-│   │   │   │   │   └── xx.txt
-│   │   │   ├── test_data
-│   │   │   ├── train_data.txt
-│   │   │   └── test_data.txt
-│   │   └── scene.jpg
-├── UCSD
-│   ├── scene_001
-│   │   ├── ucsd_800_1200
-│   │   │   ├── train_data
-│   │   │   │   ├── images
-│   │   │   │   │   └── xx.jpg
-│   │   │   │   ├── ground_truth_txt
-│   │   │   │   │   └── xx.txt
-│   │   │   ├── test_data
-│   │   │   ├── train_data.txt
-│   │   │   └── test_data.txt
-│   │   └── scene.jpg
-├── pedestrians
-│   ├── GCC
-│   │   └── xx.png
-│   ├── SHHB
-│   └── LSTN
-├── indoor_negetive_samples
-│   └── xx.jpg
-├── outdoor_negetive_samples
-│   └── xx.jpg
-└── net_G_last.pth.txt
-```
+    ```
+    $resources/
+    ├── CityUHK-X
+    │   ├── scene_001
+    │   │   ├── CityUHK-X_scene_001_20_40
+    │   │   │   ├── train_data
+    │   │   │   │   ├── images
+    │   │   │   │   │   └── xx.jpg
+    │   │   │   │   ├── ground_truth_txt
+    │   │   │   │   │   └── xx.txt
+    │   │   │   ├── test_data
+    │   │   │   ├── train_data.txt
+    │   │   │   └── test_data.txt
+    │   │   └── scene.jpg
+    │   ├── scene_002
+    │   ├── ...
+    │   └── scene_k
+    ├── Mall
+    │   ├── scene_001
+    │   │   ├── mall_800_1200
+    │   │   │   ├── train_data
+    │   │   │   │   ├── images
+    │   │   │   │   │   └── xx.jpg
+    │   │   │   │   ├── ground_truth_txt
+    │   │   │   │   │   └── xx.txt
+    │   │   │   ├── test_data
+    │   │   │   ├── train_data.txt
+    │   │   │   └── test_data.txt
+    │   │   └── scene.jpg
+    ├── UCSD
+    │   ├── scene_001
+    │   │   ├── ucsd_800_1200
+    │   │   │   ├── train_data
+    │   │   │   │   ├── images
+    │   │   │   │   │   └── xx.jpg
+    │   │   │   │   ├── ground_truth_txt
+    │   │   │   │   │   └── xx.txt
+    │   │   │   ├── test_data
+    │   │   │   ├── train_data.txt
+    │   │   │   └── test_data.txt
+    │   │   └── scene.jpg
+    ├── pedestrians
+    │   ├── GCC
+    │   │   └── xx.png
+    │   ├── SHHB
+    │   └── LSTN
+    ├── indoor_negetive_samples
+    │   └── xx.jpg
+    ├── outdoor_negetive_samples
+    │   └── xx.jpg
+    └── net_G_last.pth.txt
+    ```
 
 download related datasets:
 
