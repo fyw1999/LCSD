@@ -11,46 +11,6 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
 
 ✅ Pretrained models for MovingDroneCrowd
 
-# MovingDroneCrowd
-To promote practical crowd counting, we introduce MovingDroneCrowd — a video-level dataset specifically designed for dense pedestrian scenes captured by moving drones under complex conditions. **Notably, our dataset provides precise bounding box and ID labels for each person across frames, making it suitable for multiple pedestrian tracking from drone perspective in complex scenarios.**
-
-![dataset_example](figures/dataset_example.jpg)
-
-The folder organization of MovingDroneCrowd is illustrated below:
-```bibtex
-$MovingDroneCrowd/
-├── frames
-│   ├── scene_1
-│   │   ├── 1
-│   │   │   ├── 1.jpg 
-│   │   │   ├── 2.jpg
-│   │   │   ├── ...
-│   │   │   └── n.jpg
-│   │   ├── 2
-│   │   ├── ...
-│   │   └── m
-│   ├── scene_2
-│   ├── ...
-│   └── scene_k
-├── annotations
-│   ├── scene_1
-│   │   ├── 1.csv
-│   │   ├── 2.csv
-│   │   ├── ...
-│   │   └── m.csv
-│   ├── scene_2
-│   ├── ...
-│   └── scene_k
-├── scene_label.txt
-├── train.txt
-├── test.txt
-└── val.txt
-```
-Each scene folder contains several clips captured within that scene, and each clip has a corresponding CSV annotation file. Each annotation file consists of several rows, with each row in the following format:
-`0,0,1380,2137,27,23,-1,-1,-1,-1`.
-
-The first column indicates the frame index, the second column represents the pedestrian ID, and the third to sixth columns specify the bounding box of the pedestrian's head — including the top-left corner coordinates (x, y), width (w), and height (h). Note that image files are named starting from 1.jpg, while both frame indices and pedestrian IDs start from 0. The last four -1 values are meaningless. MovingDroneCrowd are available at the [Google Drive](https://drive.google.com/file/d/1RUGncEVEi3cUtqEWJLFejt8CF8BNbuxv/view?usp=drive_link).
-
 # Getting started
 
 ## preparatoin
@@ -67,9 +27,64 @@ The first column indicates the frame index, the second column represents the ped
     ```
 * Datasets
 
+First build the resources folder used by the code. The folder organization is illustrated below:
+
+```bibtex
+$resources/
+├── CityUHK-X
+│   ├── scene_001
+│   │   ├── CityUHK-X_scene_001_20_40
+│   │   │   ├── train_data
+│   │   │   │   ├── images
+│   │   │   │   │   └── xx.jpg
+│   │   │   │   ├── ground_truth_txt
+│   │   │   │   │   └── xx.txt
+│   │   │   ├── test_data
+│   │   │   ├── train_data.txt
+│   │   │   └── test_data.txt
+│   │   └── scene.jpg
+│   ├── scene_002
+│   ├── ...
+│   └── scene_k
+├── Mall
+│   ├── scene_001
+│   │   ├── mall_800_1200
+│   │   │   ├── train_data
+│   │   │   │   ├── images
+│   │   │   │   │   └── xx.jpg
+│   │   │   │   ├── ground_truth_txt
+│   │   │   │   │   └── xx.txt
+│   │   │   ├── test_data
+│   │   │   ├── train_data.txt
+│   │   │   └── test_data.txt
+│   │   └── scene.jpg
+├── UCSD
+│   ├── scene_001
+│   │   ├── ucsd_800_1200
+│   │   │   ├── train_data
+│   │   │   │   ├── images
+│   │   │   │   │   └── xx.jpg
+│   │   │   │   ├── ground_truth_txt
+│   │   │   │   │   └── xx.txt
+│   │   │   ├── test_data
+│   │   │   ├── train_data.txt
+│   │   │   └── test_data.txt
+│   │   └── scene.jpg
+├── pedestrians
+│   ├── GCC
+│   │   └── xx.png
+│   ├── SHHB
+│   └── LSTN
+├── indoor_negetive_samples
+│   └── xx.jpg
+├── outdoor_negetive_samples
+│   └── xx.jpg
+└── net_G_last.pth.txt
+```
+
     ◦ **Mall**: Download Mall dataset from this [link](https://personal.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html).
 
-    ◦ **UCSD**: Download frames data dataset from [link](http://visal.cs.cityu.edu.hk/static/downloads/ucsdpeds_vidf.zip) and annotations from [link](http://www.svcl.ucsd.edu/projects/peoplecnt/db/vidf-cvpr.zip). Frames in folder `vidf1_33_000.y` -- `vidf1_33_009.y` in total 2000 frames are used (only this part has coordinates labels). In out settings, `vidf1_33_003.y` -- `vidf1_33_006.y` are used for predicting pseudo labels, and `vidf1_33_00.y` -- `vidf1_33_002.y` and `vidf1_33_009.y` -- `vidf1_33_009.y`are used for test.
+    ◦ **UCSD**: Download frames data dataset from [link](http://visal.cs.cityu.edu.hk/static/downloads/ucsdpeds_vidf.zip) and annotations from [link](http://www.svcl.ucsd.edu/projects/peoplecnt/db/vidf-cvpr.zip). Frames in folder `vidf1_33_000.y` – `vidf1_33_009.y` in total 2000 frames are used (only this part has coordinates labels). In out settings, `vidf1_33_003.y` – `vidf1_33_006.y` are used for predicting pseudo labels, and `vidf1_33_00.y` – `vidf1_33_002.y` and `vidf1_33_009.y` – `vidf1_33_009.y`are used for test.
 
     ◦ **CityUHK-X**: Download CityUHK-X dataset from this[link](http://visal.cs.cityu.edu.hk/static/downloads/CityUHK-X.zip)
 
