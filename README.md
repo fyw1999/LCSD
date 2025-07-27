@@ -30,7 +30,7 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
 &nbsp;&nbsp;&nbsp;&nbsp;First build the resources folder used by the code. The folder organization is illustrated below:
 
     
-        $resources/
+        <!-- $resources/
         ├── CityUHK-X
         │   ├── scene_001
         │   │   ├── CityUHK-X_scene_001_20_40
@@ -80,7 +80,7 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
         ├── outdoor_negetive_samples
         │   └── xx.jpg
         └── net_G_last.pth.txt
-    
+     -->
 
 download related datasets:
 
