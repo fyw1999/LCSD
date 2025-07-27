@@ -56,20 +56,22 @@ The first column indicates the frame index, the second column represents the ped
 ## preparatoin
 * Clone this repo in the directory 
 
-* Install dependencies. We use python 3.11 and pytorch == 2.4.1 : http://pytorch.org.
+* Install dependencies. We use python 3.7 and pytorch == 1.10.0 : http://pytorch.org.
 
     ```bibtex
-    conda create -n MovingDroneCrowd python=3.11
-    conda activate MovingDroneCrowd
+    conda create -n LCSD python=3.7
+    conda activate LCSD
     conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.4 -c pytorch -c nvidia
     cd ${MovingDroneCrowd}
     pip install -r requirements.txt
     ```
 * Datasets
 
-    ◦ **MovingDroneCrowd**: Download MovingDroneCrowd dataset from this [link](https://drive.google.com/file/d/1RUGncEVEi3cUtqEWJLFejt8CF8BNbuxv/view?usp=drive_link). Unzip `MovingDroneCrowd.zip` and place `MovingDroneCrowd` into your datasets folder.
+    ◦ **Mall**: Download Mall dataset from this [link](https://personal.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html).
 
-    ◦ **UAVVIC**: Please refer to their code repository [CGNet](https://github.com/streamer-AP/CGNet).
+    ◦ **UCSD**: Download frames data dataset from [link](http://visal.cs.cityu.edu.hk/static/downloads/ucsdpeds_vidf.zip) and annotations from [link](http://www.svcl.ucsd.edu/projects/peoplecnt/db/vidf-cvpr.zip). Frames in folder `vidf1_33_000.y` -- `vidf1_33_009.y` in total 2000 frames are used (only this part has coordinates labels). In out settings, `vidf1_33_003.y` -- `vidf1_33_006.y` are used for predicting pseudo labels, and `vidf1_33_00.y` -- `vidf1_33_002.y` and `vidf1_33_009.y` -- `vidf1_33_009.y`are used for test.
+
+    ◦ **CityUHK-X**: Download CityUHK-X dataset from this[link](http://visal.cs.cityu.edu.hk/static/downloads/CityUHK-X.zip)
 
 ## Training
 
@@ -111,13 +113,13 @@ If you find this project is useful for your research, please cite:
   pages={713-727}
   }
 
-  @INPROCEEDINGS{ICASSP_2023_FAN
+@INPROCEEDINGS{ICASSP_2023_FAN
   author={Fan, Yaowu and Wan, Jia and Yuan, Yuan and Wang, Qi},
-  booktitle={ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
   title={Weakly-Supervised Scene-Specific Crowd Counting Using Real-Synthetic Hybrid Data}, 
   year={2023},
   pages={1-5}
-  }
+}
 
 
  ```
