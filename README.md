@@ -29,7 +29,7 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
 
 First build the resources folder used by the code. The folder organization is illustrated below:
 
-```bibtex
+```
 $resources/
 ├── CityUHK-X
 │   ├── scene_001
