@@ -1,6 +1,6 @@
 # Learning Crowd Scale and Distribution for Weakly Supervised Crowd Counting and Localization (TCSVT)
 ## Introduction
-This is the official PyTorch implementation of paper: [Learning Crowd Scale and Distribution for Weakly Supervised Crowd Counting and Localization](https://ieeexplore.ieee.org/abstract/document/10680129) (extended from paper [Weakly-supervised scene-specific crowd counting using real-synthetic hybrid data](https://ieeexplore.ieee.org/abstract/document/10095275)). This paper proposes a weakly supervised crowd counting and localization method  based on scene-specific synthetic data for surveillance scenarios, which can accurately predict the number and location of person without any manually labeled point-wise or countwise annotations.
+This is the official PyTorch implementation of paper: [Learning Crowd Scale and Distribution for Weakly Supervised Crowd Counting and Localization](https://ieeexplore.ieee.org/abstract/document/10680129) (extended from paper [Weakly-supervised scene-specific crowd counting using real-synthetic hybrid data](https://ieeexplore.ieee.org/abstract/document/10095275)). This paper proposes a weakly supervised crowd counting and localization method  based on scene-specific synthetic data for surveillance scenarios, which can accurately predict the number and location of person without any manually labeled point-wise or count-wise annotations.
 
 ![pipeline](figures/pipeline.jpg)
 
@@ -101,12 +101,25 @@ Check some parameters in `test.py` before test:
 If you find this project is useful for your research, please cite:
 
 ```bibtex
-@article{MVC,
-  title={Video Individual Counting for Moving Drones},
-  author={Fan, Yaowu and Wan, Jia and Han, Tao and Chan, Antoni B and Ma, Andy J},
-  booktitle={ICCV},
-  year={2025}
-}
+@ARTICLE{LCSD,
+  author={Fan, Yaowu and Wan, Jia and Ma, Andy J.},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+  title={Learning Crowd Scale and Distribution for Weakly Supervised Crowd Counting and Localization}, 
+  year={2025},
+  volume={35},
+  number={1},
+  pages={713-727}
+  }
+
+  @INPROCEEDINGS{ICASSP_2023_FAN
+  author={Fan, Yaowu and Wan, Jia and Yuan, Yuan and Wang, Qi},
+  booktitle={ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={Weakly-Supervised Scene-Specific Crowd Counting Using Real-Synthetic Hybrid Data}, 
+  year={2023},
+  pages={1-5}
+  }
+
+
  ```
 
 # Acknowledgement
