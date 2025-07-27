@@ -82,6 +82,7 @@ $resources/
 └── net_G_last.pth.txt
 ```
 
+download related datasets:
 
     ◦ **Mall**: Download Mall dataset from this [link](https://personal.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html).
 
