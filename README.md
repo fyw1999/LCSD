@@ -27,7 +27,7 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
     ```
 * Datasets
 
-First build the resources folder used by the code. The folder organization is illustrated below:
+&nbsp;&nbsp;&nbsp;&nbsp;First build the resources folder used by the code. The folder organization is illustrated below:
 
 ```
 $resources/
