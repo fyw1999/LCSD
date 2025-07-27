@@ -18,13 +18,12 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
 
 * Install dependencies. We use python 3.7 and pytorch == 1.10.0 : http://pytorch.org.
 
-    ```
     conda create -n LCSD python=3.7
     conda activate LCSD
     conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.4 -c pytorch -c nvidia
     cd ${MovingDroneCrowd}
     pip install -r requirements.txt
-    ```
+    
 * Datasets
 
 &nbsp;&nbsp;&nbsp;&nbsp;First build the resources folder used by the code. The folder organization is illustrated below:
