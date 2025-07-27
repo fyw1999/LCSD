@@ -26,69 +26,66 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
     pip install -r requirements.txt
     ```
 * Datasets
-
-&nbsp;&nbsp;&nbsp;&nbsp;First build the resources folder used by the code. The folder organization is illustrated below:
-
-    
-        <!-- $resources/
-        ├── CityUHK-X
-        │   ├── scene_001
-        │   │   ├── CityUHK-X_scene_001_20_40
-        │   │   │   ├── train_data
-        │   │   │   │   ├── images
-        │   │   │   │   │   └── xx.jpg
-        │   │   │   │   ├── ground_truth_txt
-        │   │   │   │   │   └── xx.txt
-        │   │   │   ├── test_data
-        │   │   │   ├── train_data.txt
-        │   │   │   └── test_data.txt
-        │   │   └── scene.jpg
-        │   ├── scene_002
-        │   ├── ...
-        │   └── scene_k
-        ├── Mall
-        │   ├── scene_001
-        │   │   ├── mall_800_1200
-        │   │   │   ├── train_data
-        │   │   │   │   ├── images
-        │   │   │   │   │   └── xx.jpg
-        │   │   │   │   ├── ground_truth_txt
-        │   │   │   │   │   └── xx.txt
-        │   │   │   ├── test_data
-        │   │   │   ├── train_data.txt
-        │   │   │   └── test_data.txt
-        │   │   └── scene.jpg
-        ├── UCSD
-        │   ├── scene_001
-        │   │   ├── ucsd_800_1200
-        │   │   │   ├── train_data
-        │   │   │   │   ├── images
-        │   │   │   │   │   └── xx.jpg
-        │   │   │   │   ├── ground_truth_txt
-        │   │   │   │   │   └── xx.txt
-        │   │   │   ├── test_data
-        │   │   │   ├── train_data.txt
-        │   │   │   └── test_data.txt
-        │   │   └── scene.jpg
-        ├── pedestrians
-        │   ├── GCC
-        │   │   └── xx.png
-        │   ├── SHHB
-        │   └── LSTN
-        ├── indoor_negetive_samples
-        │   └── xx.jpg
-        ├── outdoor_negetive_samples
-        │   └── xx.jpg
-        └── net_G_last.pth.txt
-     -->
+    ```
+    $resources/
+    ├── CityUHK-X
+    │   ├── scene_001
+    │   │   ├── CityUHK-X_scene_001_20_40
+    │   │   │   ├── train_data
+    │   │   │   │   ├── images
+    │   │   │   │   │   └── xx.jpg
+    │   │   │   │   ├── ground_truth_txt
+    │   │   │   │   │   └── xx.txt
+    │   │   │   ├── test_data
+    │   │   │   ├── train_data.txt
+    │   │   │   └── test_data.txt
+    │   │   └── scene.jpg
+    │   ├── scene_002
+    │   ├── ...
+    │   └── scene_k
+    ├── Mall
+    │   ├── scene_001
+    │   │   ├── mall_800_1200
+    │   │   │   ├── train_data
+    │   │   │   │   ├── images
+    │   │   │   │   │   └── xx.jpg
+    │   │   │   │   ├── ground_truth_txt
+    │   │   │   │   │   └── xx.txt
+    │   │   │   ├── test_data
+    │   │   │   ├── train_data.txt
+    │   │   │   └── test_data.txt
+    │   │   └── scene.jpg
+    ├── UCSD
+    │   ├── scene_001
+    │   │   ├── ucsd_800_1200
+    │   │   │   ├── train_data
+    │   │   │   │   ├── images
+    │   │   │   │   │   └── xx.jpg
+    │   │   │   │   ├── ground_truth_txt
+    │   │   │   │   │   └── xx.txt
+    │   │   │   ├── test_data
+    │   │   │   ├── train_data.txt
+    │   │   │   └── test_data.txt
+    │   │   └── scene.jpg
+    ├── pedestrians
+    │   ├── GCC
+    │   │   └── xx.png
+    │   ├── SHHB
+    │   └── LSTN
+    ├── indoor_negetive_samples
+    │   └── xx.jpg
+    ├── outdoor_negetive_samples
+    │   └── xx.jpg
+    └── net_G_last.pth.txt
+    ```
 
 download related datasets:
 
-&nbsp;◦ **Mall**: Download Mall dataset from this [link](https://personal.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html).
+◦ **Mall**: Download Mall dataset from this [link](https://personal.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html).
 
-&nbsp;◦ **UCSD**: Download frames data dataset from [link](http://visal.cs.cityu.edu.hk/static/downloads/ucsdpeds_vidf.zip) and annotations from [link](http://www.svcl.ucsd.edu/projects/peoplecnt/db/vidf-cvpr.zip). Frames in folder `vidf1_33_000.y` – `vidf1_33_009.y` in total 2000 frames are used (only this part has coordinates labels). In out settings, `vidf1_33_003.y` – `vidf1_33_006.y` are used for predicting pseudo labels, and `vidf1_33_00.y` – `vidf1_33_002.y` and `vidf1_33_009.y` – `vidf1_33_009.y`are used for test.
+◦ **UCSD**: Download frames data dataset from [link](http://visal.cs.cityu.edu.hk/static/downloads/ucsdpeds_vidf.zip) and annotations from [link](http://www.svcl.ucsd.edu/projects/peoplecnt/db/vidf-cvpr.zip). Frames in folder `vidf1_33_000.y` – `vidf1_33_009.y` in total 2000 frames are used (only this part has coordinates labels). In out settings, `vidf1_33_003.y` – `vidf1_33_006.y` are used for predicting pseudo labels, and `vidf1_33_00.y` – `vidf1_33_002.y` and `vidf1_33_009.y` – `vidf1_33_009.y`are used for test.
 
-&nbsp;◦ **CityUHK-X**: Download CityUHK-X dataset from this[link](http://visal.cs.cityu.edu.hk/static/downloads/CityUHK-X.zip)
+◦ **CityUHK-X**: Download CityUHK-X dataset from this[link](http://visal.cs.cityu.edu.hk/static/downloads/CityUHK-X.zip)
 
 ## Training
 
