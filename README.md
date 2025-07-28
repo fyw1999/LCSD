@@ -15,9 +15,10 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
     ```
     conda create -n LCSD python=3.7
     conda activate LCSD
-    conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.4 -c pytorch -c nvidia
-    cd ${MovingDroneCrowd}
+    conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=11.3 -c pytorch -c conda-forge
+    cd ${LCSD}
     pip install -r requirements.txt
+    pip install git+http://github.com/nikitadurasov/masksembles
     ```
 * Download the resource files used by the code from this [link](https://drive.google.com/file/d/1cljjDA50K1MTQhHKKfx2gCHsjNk7YIoY/view?usp=drive_link), including datasets, pre-trained models, pedestrian gallery, and negetive samples. Unzip `resources.zip` to `resources`. The `resources` folder is organized as follows:
     ```
