@@ -1,0 +1,16 @@
+imgaug==0.4.0
+matplotlib==3.5.3
+numpy==1.21.6
+opencv_python==4.10.0.84
+Pillow==9.2.0
+pykeops==2.3
+pytorchyolo==1.8.0
+PyYAML==6.0.1
+Requests==2.32.4
+scikit_learn==1.0.2
+scipy==1.7.3
+sortedcontainers==2.4.0
+terminaltables==3.1.10
+torchsummary==1.5.1
+tqdm==4.66.4
+yacs==0.1.8
