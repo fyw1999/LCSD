@@ -25,12 +25,12 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
     cd ${MovingDroneCrowd}
     pip install -r requirements.txt
     ```
-* Resources folder organization:
+* Download the resource files used by the code from this [link](), including datasets, pre-trained models, pedestrian gallery, and negetive samples. Unzip `resources.zip` to `resources`. The `resources` folder is organized as follows:
     ```
     $resources/
-    ├── CityUHK-X
-    │   ├── scene_001
-    │   │   ├── CityUHK-X_scene_001_20_40
+    ├── CityUHK-X  # dataset name
+    │   ├── scene_001  # scene name
+    │   │   ├── CityUHK-X_scene_001_20_40  # specific dataset for this scene
     │   │   │   ├── train_data
     │   │   │   │   ├── images
     │   │   │   │   │   └── xx.jpg
@@ -44,7 +44,7 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
     │   ├── ...
     │   └── scene_k
     ├── Mall
-    │   ├── scene_001
+    │   ├── scene_001  # only one scene for Mall
     │   │   ├── mall_800_1200
     │   │   │   ├── train_data
     │   │   │   │   ├── images
@@ -67,18 +67,19 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
     │   │   │   ├── train_data.txt
     │   │   │   └── test_data.txt
     │   │   └── scene.jpg
-    ├── pedestrians
-    │   ├── GCC
+    ├── pedestrians  #  pedestrian gallery
+    │   ├── GCC #  default
     │   │   └── xx.png
     │   ├── SHHB
     │   └── LSTN
-    ├── indoor_negetive_samples
+    ├── indoor_negetive_samples 
     │   └── xx.jpg
     ├── outdoor_negetive_samples
     │   └── xx.jpg
-    └── net_G_last.pth.txt
+    ├── darknet53.conv.74  #  pre-trained model for detection
+    └── net_G_last.pth.txt  #  pre-trained model for image harmonization
     ```
-
+<!-- 
 * Download datasets:
 
     ◦ **Mall**: Download Mall dataset from this [link](https://personal.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html). You can randomly select 800 images for predicting pseudo labels and 1200 images for test.
@@ -87,21 +88,18 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
 
     ◦ **CityUHK-X**: Download CityUHK-X dataset from this[link](http://visal.cs.cityu.edu.hk/static/downloads/CityUHK-X.zip). Each surveillance scene in CityUHK-X has 60 images, with 20 used for predicting pseudo labels and 40 for test.
 
-    Place images in the `images` folder, and extracte the corresponding labels into the `ground_truth_txt` folder. Ensure that the image and label filenames are identical. In each label `.txt` file, each line contains the coordinates `x y` representing the position of a pedestrian.
+    Place images in the `images` folder, and extracte the corresponding labels into the `ground_truth_txt` folder. Ensure that the image and label filenames are identical. In each label `.txt` file, each line contains the coordinates `x y` representing the position of a pedestrian. -->
 
 ## Training
 
-Check some parameters in `config.py` before training:
+Check some parameters in `train.py` before training:
 
-* Use `__C.DATASET = 'MovingDroneCrowd'` to set the dataset (default: `MovingDroneCrowd`).
-* Use `__C.NAME = xxx` to set the name of the training, which will be a part of the save directory.
-* Use `__C.PRE_TRAIN_COUNTER` to set the pre-trained counter to accelerate the training process. The pre-trained counter can be download from this [link](https://drive.google.com/file/d/1ILLLMM3vDIm773XNOerj8rQH-DCQYzRA/view?usp=drive_link).
-* Use `__C.GPU_ID = '0'` to set the GPU. You can set `__C.GPU_ID = '0, 1, 2, 3'` if you have multiple GUPs.
-* Use `__C.MAX_EPOCH = 100` to set the number of the training epochs (default:100). 
-* Set dataset related parameters (`DATA_PATH`, `TRAIN_BATCH_SIZE`, `TRAIN_SIZE` etc.) in the `datasets/setting`.
-* run `python train.py` for one GPU, or run `torchrun --master_port 29515 --nproc_per_node=4 train.py`for multiple GPUs. (for example, 4 GPUs)
-
-Tips: The training process takes ~12 hours on `MovingDroneCrowd` dataset with two A800 (80GB Memory).
+* Use `dataset = Mall` to set the dataset.
+* Use `scene = scene_001` to set the scene of the dataset. `Mall` and `UCSD` only have one scene, so set `scene` as `scene_001`.
+* Use `source-path = {$resources}` to set the base path of the resource folder downloaded above.
+* Use `real-data-dir = mall_800_1200` to set the specific dataset of the scene.
+* Use `device = 0` to set the gpu id for training. 
+* run `python train.py`.
 
 ## Test
 
