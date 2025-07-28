@@ -4,12 +4,6 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
 
 ![pipeline](figures/pipeline.jpg)
 
-# Catalog
-✅ MovingDroneCrowd
-
-✅ Training and Testing Code for SDNet
-
-✅ Pretrained models for MovingDroneCrowd
 
 # Getting started
 
@@ -25,7 +19,7 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
     cd ${MovingDroneCrowd}
     pip install -r requirements.txt
     ```
-* Download the resource files used by the code from this [link](), including datasets, pre-trained models, pedestrian gallery, and negetive samples. Unzip `resources.zip` to `resources`. The `resources` folder is organized as follows:
+* Download the resource files used by the code from this [link](https://drive.google.com/file/d/1cljjDA50K1MTQhHKKfx2gCHsjNk7YIoY/view?usp=drive_link), including datasets, pre-trained models, pedestrian gallery, and negetive samples. Unzip `resources.zip` to `resources`. The `resources` folder is organized as follows:
     ```
     $resources/
     ├── CityUHK-X  # dataset name
@@ -96,7 +90,7 @@ Check some parameters in `train.py` before training:
 
 * Use `dataset = Mall` to set the dataset.
 * Use `scene = scene_001` to set the scene of the dataset. `Mall` and `UCSD` only have one scene, so set `scene` as `scene_001`.
-* Use `source-path = {$resources}` to set the base path of the resource folder downloaded above.
+* Use `source-path = {$resources}` to set the path of the resource folder downloaded above.
 * Use `real-data-dir = mall_800_1200` to set the specific dataset of the scene.
 * Use `device = 0` to set the gpu id for training. 
 * run `python train.py`.
