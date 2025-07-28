@@ -34,7 +34,7 @@ This is the official PyTorch implementation of paper: [Learning Crowd Scale and 
     │   │   │   ├── test_data
     │   │   │   ├── train_data.txt
     │   │   │   └── test_data.txt
-    │   │   └── scene.jpg
+    │   │   └── scene.jpg  #  scene image without person
     │   ├── scene_002
     │   ├── ...
     │   └── scene_k
@@ -91,8 +91,8 @@ Check some parameters in `train.py` before training:
 
 * Use `dataset = Mall` to set the dataset.
 * Use `scene = scene_001` to set the scene of the dataset. `Mall` and `UCSD` only have one scene, so set `scene` as `scene_001`.
-* Use `source-path = {$resources}` to set the path of the resource folder downloaded above.
-* Use `real-data-dir = mall_800_1200` to set the specific dataset of the scene.
+* Use `resource-path = {$resources}` to set the path of the resource folder downloaded above.
+* Use `scene-dataset = mall_800_1200` to set the specific dataset of the scene.
 * Use `device = 0` to set the gpu id for training. 
 * run `python train.py`.
 
@@ -101,11 +101,13 @@ Check some parameters in `train.py` before training:
 <!--To reproduce the performance, download the pre-trained models from [Google Drive]() and then place pretrained_model files to `SDNet/pre_train_model/`. -->
 Check some parameters in `test.py` before test:
 
-* Use `DATASET = MovingDroneCrowd` to set the dataset used for test.
-* Use `test_name = xxx` to set a test name, which will be a part of the save director of test reults.
-* Use `test_intervals = 4` to set frame interval for test (default `4` for `MovingDroneCrowd`). 
-* Use `model_path = xxx` to set the pre-trained model file.
-* Use `GPU_ID = 0` to set the GPU used for test.
+* Use `dataset = Mall` to set the dataset.
+* Use `scene = scene_001` to set the scene of the dataset.
+* Use `resource-path = {$resources}` to set the path of the resource folder.
+* Use `scene-dataset = mall_800_1200` to set the specific dataset of the scene.
+* Use `model_path = xxx.pth` to set the pre-trained counter in the training stage.
+* Use `test-name = xxx` to set the test name, which will be used to name the folder for saving the test results.
+* Use `device = 0` to set the gpu used for test.
 * run `test.py`
 
 # Citation
@@ -135,4 +137,4 @@ If you find this project is useful for your research, please cite:
 
 # Acknowledgement
 
-The released PyTorch training script borrows some codes from the [DRNet](https://github.com/taohan10200/DRNet). If you think this repo is helpful for your research, please consider cite them.
+The released PyTorch training script borrows some codes from the [masksembles](https://github.com/nikitadurasov/masksembles) and [yolov3](https://github.com/eriklindernoren/PyTorch-YOLOv3). If you think this repo is helpful for your research, please consider cite them.
