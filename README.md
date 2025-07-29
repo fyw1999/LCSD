@@ -137,4 +137,4 @@ If you find this project is useful for your research, please cite:
 
 # Acknowledgement
 
-The released PyTorch training script borrows some codes from the [masksembles](https://github.com/nikitadurasov/masksembles) and [yolov3](https://github.com/eriklindernoren/PyTorch-YOLOv3). If you think this repo is helpful for your research, please consider cite them.
+The released PyTorch training script borrows some codes from the [masksembles](https://github.com/nikitadurasov/masksembles), [yolov3](https://github.com/eriklindernoren/PyTorch-YOLOv3), and [RainNet](https://github.com/junleen/RainNet). If you think this repo is helpful for your research, please consider cite them.

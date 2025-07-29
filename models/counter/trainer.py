@@ -692,6 +692,7 @@ class CounterTrainer():
                 pseudo_point = gen_pseudo_point(output)
                 un_map = torch.zeros((input.shape[2], input.shape[3]))
             
+            # Only the regions near pseudo points are involved in the loss computation.
             mask = pseudo_point_mask(output, pseudo_point, scale_model, self.args.downsample_ratio)
 
             batch_images.append(image)
